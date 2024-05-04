@@ -8,6 +8,8 @@
     <body>
         <div id="shopping-list">
             <h1>{{header || 'Welcome'}}</h1>
+            <input type="text" v-model="newItem" />
+            {{newItem}}
             <ul>
                 <li v-for="item in items" :key="item.id">{{item.label}}</li>
             </ul>
@@ -18,6 +20,7 @@
                 data() {
                     return {
                         header: 'Shopping List App',
+                        newItem: "hola",
                         items: [
                             {id: 1, label: "10 party hats",},
                             {id: 2, label: "2 board games",},
