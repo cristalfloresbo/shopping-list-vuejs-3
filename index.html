@@ -8,10 +8,14 @@
     <body>
         <div id="shopping-list">
             <h1>{{header || 'Welcome'}}</h1>
-            <!-- v-model.trim input: Hello    World    output:Hello. World.-->
             <input type="text" v-model.trim="newItem" />
-            <label><input type="radio" v-model="newItemPriority" value="Low">Low</label>
-            <label><input type="radio" v-model="newItemPriority" value="High">High</label>
+            <label>
+                Priority:
+                <select v-model="newItemPriority">
+                    <option value="Low">Low</option>
+                    <option value="High">High</option>
+                </select>
+            </label>
             <br>
             {{newItem}}{{newItemPriority}}
             <ul>
